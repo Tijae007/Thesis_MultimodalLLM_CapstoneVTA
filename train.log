@@ -1,0 +1,207 @@
+Unsloth 2025.3.19 patched 32 layers with 32 QKV layers, 32 O layers and 32 MLP layers.
+Unsloth: Will map <|im_end|> to EOS = </s>.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
+Collecting wandb
+  Downloading wandb-0.19.11-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (10 kB)
+Collecting click!=8.0.0,>=7.1 (from wandb)
+  Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+Collecting docker-pycreds>=0.4.0 (from wandb)
+  Downloading docker_pycreds-0.4.0-py2.py3-none-any.whl.metadata (1.8 kB)
+Collecting gitpython!=3.1.29,>=1.0.0 (from wandb)
+  Downloading GitPython-3.1.44-py3-none-any.whl.metadata (13 kB)
+Collecting platformdirs (from wandb)
+  Downloading platformdirs-4.3.8-py3-none-any.whl.metadata (12 kB)
+Collecting protobuf!=4.21.0,!=5.28.0,<7,>=3.19.0 (from wandb)
+  Downloading protobuf-6.31.1-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Collecting psutil>=5.0.0 (from wandb)
+  Downloading psutil-7.0.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (22 kB)
+Collecting pydantic<3 (from wandb)
+  Downloading pydantic-2.11.5-py3-none-any.whl.metadata (67 kB)
+Collecting pyyaml (from wandb)
+  Downloading PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting requests<3,>=2.0.0 (from wandb)
+  Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting sentry-sdk>=2.0.0 (from wandb)
+  Downloading sentry_sdk-2.29.1-py2.py3-none-any.whl.metadata (10 kB)
+Collecting setproctitle (from wandb)
+  Downloading setproctitle-1.3.6-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (10 kB)
+Collecting setuptools (from wandb)
+  Downloading setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting typing-extensions<5,>=4.4 (from wandb)
+  Downloading typing_extensions-4.13.2-py3-none-any.whl.metadata (3.0 kB)
+Collecting six>=1.4.0 (from docker-pycreds>=0.4.0->wandb)
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.29,>=1.0.0->wandb)
+  Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+Collecting annotated-types>=0.6.0 (from pydantic<3->wandb)
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.33.2 (from pydantic<3->wandb)
+  Downloading pydantic_core-2.33.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting typing-inspection>=0.4.0 (from pydantic<3->wandb)
+  Downloading typing_inspection-0.4.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting charset-normalizer<4,>=2 (from requests<3,>=2.0.0->wandb)
+  Downloading charset_normalizer-3.4.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
+Collecting idna<4,>=2.5 (from requests<3,>=2.0.0->wandb)
+  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests<3,>=2.0.0->wandb)
+  Downloading urllib3-2.4.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests<3,>=2.0.0->wandb)
+  Downloading certifi-2025.4.26-py3-none-any.whl.metadata (2.5 kB)
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb)
+  Downloading smmap-5.0.2-py3-none-any.whl.metadata (4.3 kB)
+Downloading wandb-0.19.11-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (21.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.4/21.4 MB 61.2 MB/s eta 0:00:00
+Downloading click-8.2.1-py3-none-any.whl (102 kB)
+Downloading docker_pycreds-0.4.0-py2.py3-none-any.whl (9.0 kB)
+Downloading GitPython-3.1.44-py3-none-any.whl (207 kB)
+Downloading protobuf-6.31.1-cp39-abi3-manylinux2014_x86_64.whl (321 kB)
+Downloading psutil-7.0.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (277 kB)
+Downloading pydantic-2.11.5-py3-none-any.whl (444 kB)
+Downloading pydantic_core-2.33.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 167.2 MB/s eta 0:00:00
+Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+Downloading sentry_sdk-2.29.1-py2.py3-none-any.whl (341 kB)
+Downloading typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+Downloading platformdirs-4.3.8-py3-none-any.whl (18 kB)
+Downloading PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (751 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 751.2/751.2 kB 693.0 MB/s eta 0:00:00
+Downloading setproctitle-1.3.6-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (30 kB)
+Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 583.5 MB/s eta 0:00:00
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading certifi-2025.4.26-py3-none-any.whl (159 kB)
+Downloading charset_normalizer-3.4.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (149 kB)
+Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+Downloading idna-3.10-py3-none-any.whl (70 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading typing_inspection-0.4.1-py3-none-any.whl (14 kB)
+Downloading urllib3-2.4.0-py3-none-any.whl (128 kB)
+Downloading smmap-5.0.2-py3-none-any.whl (24 kB)
+Installing collected packages: urllib3, typing-extensions, smmap, six, setuptools, setproctitle, pyyaml, psutil, protobuf, platformdirs, idna, click, charset-normalizer, certifi, annotated-types, typing-inspection, sentry-sdk, requests, pydantic-core, gitdb, docker-pycreds, pydantic, gitpython, wandb
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+torchvision 0.21.0 requires torch==2.6.0, but you have torch 2.2.2+cpu which is incompatible.
+unsloth 2025.3.19 requires protobuf<4.0.0, but you have protobuf 6.31.1 which is incompatible.
+unsloth 2025.3.19 requires torch>=2.4.0, but you have torch 2.2.2+cpu which is incompatible.
+unsloth-zoo 2025.3.17 requires protobuf<4.0.0, but you have protobuf 6.31.1 which is incompatible.
+xformers 0.0.29.post3 requires torch==2.6.0, but you have torch 2.2.2+cpu which is incompatible.
+Successfully installed annotated-types-0.7.0 certifi-2025.4.26 charset-normalizer-3.4.2 click-8.2.1 docker-pycreds-0.4.0 gitdb-4.0.12 gitpython-3.1.44 idna-3.10 platformdirs-4.3.8 protobuf-6.31.1 psutil-7.0.0 pydantic-2.11.5 pydantic-core-2.33.2 pyyaml-6.0.2 requests-2.32.3 sentry-sdk-2.29.1 setproctitle-1.3.6 setuptools-80.9.0 six-1.17.0 smmap-5.0.2 typing-extensions-4.13.2 typing-inspection-0.4.1 urllib3-2.4.0 wandb-0.19.11
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/wandb-0.19.11.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/platformdirs-4.3.8.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/click-8.2.1.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/requests already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/google already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/smmap already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/setproctitle-1.3.6.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/gitdb-4.0.12.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/platformdirs already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/pydantic-2.11.5.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/setuptools already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/psutil already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/certifi-2025.4.26.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/setproctitle already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/package_readme.md already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/PyYAML-6.0.2.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/urllib3 already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/six.py already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/typing_extensions.py already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/GitPython-3.1.44.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/smmap-5.0.2.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/git already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/charset_normalizer-3.4.2.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/gitdb already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/idna-3.10.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/psutil-7.0.0.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/certifi already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/annotated_types already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/_distutils_hack already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/setuptools-80.9.0.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/docker_pycreds-0.4.0.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/sentry_sdk-2.29.1.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/typing_inspection already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/pydantic already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/yaml already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/six-1.17.0.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/distutils-precedence.pth already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/annotated_types-0.7.0.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/sentry_sdk already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/pydantic_core already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/urllib3-2.4.0.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/requests-2.32.3.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/pkg_resources already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/dockerpycreds already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/pydantic_core-2.33.2.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/typing_inspection-0.4.1.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/_yaml already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/click already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/charset_normalizer already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/wandb already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/idna already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/typing_extensions-4.13.2.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/bin already exists. Specify --upgrade to force replacement.
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: tijaniyunus07 (tijaniyunus07-constructor-institute) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+/home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/transformers/training_args.py:1611: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/transformers/training_args.py:1611: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs used = 1
+   \\   /|    Num examples = 396 | Num Epochs = 42 | Total steps = 1,000
+O^O/ \_/ \    Batch size per device = 4 | Gradient accumulation steps = 4
+\        /    Data Parallel GPUs = 1 | Total batch size (4 x 4 x 1) = 16
+ "-____-"     Trainable parameters = 41,943,040/7,000,000,000 (0.60% trained)
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/coder/project/yunus/wandb/run-20250529_144750-8659pnu2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run yunus_mistral_finetune
+wandb: ⭐️ View project at https://wandb.ai/tijaniyunus07-constructor-institute/huggingface
+wandb: 🚀 View run at https://wandb.ai/tijaniyunus07-constructor-institute/huggingface/runs/8659pnu2
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+🦥 Unsloth Zoo will now patch everything to make training faster!
+==((====))==  Unsloth 2025.3.19: Fast Mistral patching. Transformers: 4.50.3.
+   \\   /|    NVIDIA A100 80GB PCIe. Num GPUs = 1. Max memory: 79.138 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.6.0+cu124. CUDA: 8.0. CUDA Toolkit: 12.4. Triton: 3.2.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.29.post3. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+Unsloth: Hugging Face's packing is currently buggy - we're disabling it for now!
+Unsloth: Hugging Face's packing is currently buggy - we're disabling it for now!
+GPU = NVIDIA A100 80GB PCIe. Max memory = 79.138 GB.
+4.051 GB of memory reserved.
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 1/1000 [00:06<1:42:21,  6.15s/it]  0%|          | 2/1000 [00:09<1:16:05,  4.57s/it]  0%|          | 3/1000 [00:11<59:03,  3.55s/it]    0%|          | 4/1000 [00:14<50:16,  3.03s/it]  0%|          | 5/1000 [00:16<46:49,  2.82s/it]  1%|          | 6/1000 [00:19<45:12,  2.73s/it]  1%|          | 7/1000 [00:21<44:32,  2.69s/it]  1%|          | 8/1000 [00:25<48:22,  2.93s/it]  1%|          | 9/1000 [00:27<44:13,  2.68s/it]  1%|          | 10/1000 [00:29<42:35,  2.58s/it]                                                   1%|          | 10/1000 [00:29<42:35,  2.58s/it]  1%|          | 11/1000 [00:33<46:23,  2.81s/it]  1%|          | 12/1000 [00:34<41:28,  2.52s/it]  1%|▏         | 13/1000 [00:36<38:08,  2.32s/it]  1%|▏         | 14/1000 [00:39<39:26,  2.40s/it]  2%|▏         | 15/1000 [00:42<41:20,  2.52s/it]  2%|▏         | 16/1000 [00:44<41:52,  2.55s/it]  2%|▏         | 17/1000 [00:49<52:10,  3.18s/it]  2%|▏         | 18/1000 [00:51<45:18,  2.77s/it]  2%|▏         | 19/1000 [00:53<43:05,  2.64s/it]  2%|▏         | 20/1000 [00:56<42:08,  2.58s/it]                                                   2%|▏         | 20/1000 [00:56<42:08,  2.58s/it]  2%|▏         | 21/1000 [00:58<42:24,  2.60s/it]  2%|▏         | 22/1000 [01:01<44:46,  2.75s/it]Unsloth: Will smartly offload gradients to save VRAM!
+{'loss': 2.6693, 'grad_norm': 5.163564205169678, 'learning_rate': 2.0000000000000003e-06, 'epoch': 0.4}
+{'loss': 2.6862, 'grad_norm': 5.02402925491333, 'learning_rate': 4.000000000000001e-06, 'epoch': 0.81}
+Traceback (most recent call last):
+  File "/home/coder/project/yunus/mistral_v0_3_(7b)_conversational.py", line 226, in <module>
+    trainer_stats = trainer.train()
+  File "/home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/transformers/trainer.py", line 2245, in train
+    return inner_training_loop(
+  File "<string>", line 310, in _fast_inner_training_loop
+  File "<string>", line 77, in _unsloth_training_step
+  File "/home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/accelerate/accelerator.py", line 2454, in backward
+    loss.backward(**kwargs)
+  File "/home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/torch/_tensor.py", line 626, in backward
+    torch.autograd.backward(
+  File "/home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/coder/project/yunus/mistral_v0_3_(7b)_conversational.py", line 226, in <module>
+    trainer_stats = trainer.train()
+  File "/home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/transformers/trainer.py", line 2245, in train
+    return inner_training_loop(
+  File "<string>", line 310, in _fast_inner_training_loop
+  File "<string>", line 77, in _unsloth_training_step
+  File "/home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/accelerate/accelerator.py", line 2454, in backward
+    loss.backward(**kwargs)
+  File "/home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/torch/_tensor.py", line 626, in backward
+    torch.autograd.backward(
+  File "/home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/coder/.local/lib/python310-conda-cuda-torch21/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33myunus_mistral_finetune[0m at: [34mhttps://wandb.ai/tijaniyunus07-constructor-institute/huggingface/runs/8659pnu2[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250529_144750-8659pnu2/logs[0m

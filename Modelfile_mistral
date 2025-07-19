@@ -1,0 +1,5 @@
+FROM ./merged_mistral.gguf
+
+TEMPLATE """{{ .Prompt }}"""
+
+SYSTEM """You are an expert assistant trained to convert natural language questions into SQL queries."""

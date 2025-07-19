@@ -1,0 +1,5 @@
+FROM ./merged_llama.gguf
+
+TEMPLATE """{{ .Prompt }}"""
+
+SYSTEM """You are a helpful teaching assistant trained on educational conversations."""
